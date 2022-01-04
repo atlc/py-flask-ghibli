@@ -33,7 +33,7 @@ def index():
 
 @app.get('/films')
 def all_films():
-    return render_template("views/films/all.html", films=films)
+    return render_template("films/all.html", films=films)
 
 
 @app.get('/films/<film_id>')
@@ -43,9 +43,13 @@ def single_film(film_id):
         if (film['id'] == film_id):
             found_film = film
     if (found_film.__len__() > 0):
-        return render_template("views/films/single.html", film=found_film)
+        hours = int(int(film['running_time']) / 60)
+        minutes = int(film['running_time']) % 60
+        film_with_time = {**found_film, "hours": hours, "minutes": minutes}
+        print(film_with_time)
+        return render_template("films/single.html", film=film_with_time)
     else:
-        return render_template("views/not_found.html", resource_name="films")
+        return render_template("not_found.html", resource_name="films")
 
 
 @app.get('/people')
