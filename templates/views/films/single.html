@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Films</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body class="bg-light" style="background-image: url('{{ film.movie_banner }}'); background-repeat: no-repeat; background-size: cover;">
+        <div class="container">
+            <div style="min-height: 100vh" class="row align-items-center text-center justify-content-center">
+                <div class="col-12">
+                    <div style="opacity: 0.8" class="card bg-white shadow-lg m-5 p-2">
+                        <div class="text-end m-2">
+                            <a class="m-2" href="/films">Return to /films</a>
+                            <a class="m-2" href="/">Go home</a>
+                        </div>
+                        <div class="card-title row">
+                            <div class="col-12 col-md-9 row">
+                                <h1>{{ film.title }}</h1>
+                                <h2>({{ film.original_title }} / "{{ film.original_title_romanised }}")</h2>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <img class="col-3" style="width: 5rem; height: auto" src="{{ film.image }}" alt="" class="card-cap" />
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p style="font-size: 0.9rem">{{ film.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

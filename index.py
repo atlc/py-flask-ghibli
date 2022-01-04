@@ -33,7 +33,7 @@ def index():
 
 @app.get('/films')
 def all_films():
-    return jsonify(films)
+    return render_template("views/films/all.html", films=films)
 
 
 @app.get('/films/<film_id>')
@@ -43,9 +43,9 @@ def single_film(film_id):
         if (film['id'] == film_id):
             found_film = film
     if (found_film.__len__() > 0):
-        return found_film
+        return render_template("views/films/single.html", film=found_film)
     else:
-        return {"message": "No film with that ID was located"}, 404
+        return render_template("views/not_found.html", resource_name="films")
 
 
 @app.get('/people')

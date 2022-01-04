@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Studio Ghibli API</title>
+        <title>No Resource Found</title>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -16,13 +16,9 @@
         <div class="container">
             <div style="min-height: 95vh" class="row text-center align-items-center justify-content-center">
                 <div>
-                    <h1 class="text-primary">Studio Ghibli API</h1>
-                    <h6 class="text-muted">Written in Python with Flask</h6>
-                    <a class="m-2" href="/films">films</a>
-                    <a class="m-2" href="/people">people</a>
-                    <a class="m-2" href="/species">species</a>
-                    <a class="m-2" href="/locations">locations</a>
-                    <a class="m-2" href="/vehicles">vehicles</a>
+                    <h1 class="text-muted">That resource was not found in /{{ resource_name }}.</h1>
+                    <a href="/{{ resource_name }}">Return to {{ resource_name }}</a>
+                    <a href="/">Go home</a>
                 </div>
             </div>
         </div>
