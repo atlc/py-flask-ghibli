@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 {% for film in films: %}
-                    <section  style="background-image: url('{{ film.movie_banner }}'); background-repeat: no-repeat; background-size: cover;" class="card col-12 col-md-3 bg-white shadow-lg m-2">
+                    <section id="{{ film.id }}" style="background-image: url('{{ film.movie_banner }}'); background-repeat: no-repeat; background-size: cover;" class="card col-12 col-md-3 bg-white shadow-lg m-2">
                         <div style="opacity: 0.8;" class="text-center bg-white p-2 mt-2 rounded-2 card-title">                
                             <a href={{'/films/' + film.id }}>{{ film.title }}</a></div>
                         <article class="bg-white mb-2 p-2 rounded-2" style="opacity: 0.8; font-size: 0.7rem">
