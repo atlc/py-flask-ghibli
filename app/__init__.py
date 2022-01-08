@@ -36,11 +36,6 @@ def all_films():
     return render_template("films/all.html", films=films)
 
 
-@app.get('/api/films')
-def api_all_films():
-    return jsonify(films)
-
-
 @app.get('/films/<film_id>')
 def single_film(film_id):
     found_film = {}
@@ -56,6 +51,29 @@ def single_film(film_id):
         return render_template("not_found.html", resource_name="films")
 
 
+@app.get('/people')
+def all_people():
+    return render_template('people/all.html', people=people)
+
+
+@app.get('/people/<person_id>')
+def single_person(person_id):
+    found_person = {}
+    for person in people:
+        if (person['id'] == person_id):
+            found_person = person
+            for spc in species:
+                if (spc['id'] == person['species'].replace("http://localhost:5000/api/species/", "")):
+                    found_person['species'] = spc['name']
+
+    return render_template('people/single_person.html', person=found_person)
+
+
+@app.get('/api/films')
+def api_all_films():
+    return jsonify(films)
+
+
 @app.get('/api/films/<film_id>')
 def api_single_film(film_id):
     found_film = {}
@@ -66,12 +84,12 @@ def api_single_film(film_id):
 
 
 @app.get('/api/people')
-def all_people():
+def api_all_people():
     return jsonify(people)
 
 
 @app.get('/api/people/<person_id>')
-def single_person(person_id):
+def api_single_person(person_id):
     found_person = {}
     for person in people:
         if (person['id'] == person_id):

@@ -12,10 +12,17 @@
             crossorigin="anonymous"
         />
     </head>
-    <body class="bg-light">
+    <body
+        style="
+            background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: contain;
+        "
+    >
         <div class="container">
             <div style="min-height: 95vh" class="row text-center align-items-center justify-content-center">
-                <div>
+                <div class="col-8" style="background-color: white; opacity: 0.9">
                     <h1 class="text-primary">Studio Ghibli API</h1>
                     <h6 class="text-muted">Written in Python with Flask</h6>
                     <a class="m-2" href="/films">films</a>
@@ -23,6 +30,15 @@
                     <a class="m-2" href="/species">species</a>
                     <a class="m-2" href="/locations">locations</a>
                     <a class="m-2" href="/vehicles">vehicles</a>
+                    <hr />
+                    <div>
+                        <h6 class="text-muted">Raw API Responses:</h6>
+                        <a class="m-2" href="/api/films">films</a>
+                        <a class="m-2" href="/api/people">people</a>
+                        <a class="m-2" href="/api/species">species</a>
+                        <a class="m-2" href="/api/locations">locations</a>
+                        <a class="m-2" href="/api/vehicles">vehicles</a>
+                    </div>
                 </div>
             </div>
         </div>

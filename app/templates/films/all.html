@@ -12,22 +12,23 @@
             crossorigin="anonymous"
         />
     </head>
-    <body class="bg-light">
-        <nav>
-            <a class="m-2 text-center" href="/">Home</a>
+    <body style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png'); background-repeat: no-repeat; background-attachment: fixed; background-size: contain">
+        <nav class="d-flex justify-content-center">
+            <a class="m-2 text-center lead" href="/">Home</a>
         </nav>
         <div class="container">
             <div class="row justify-content-center">
                 {% for film in films: %}
-                    <section id="{{ film.id }}" style="background-image: url('{{ film.movie_banner }}'); background-repeat: no-repeat; background-size: cover;" class="card col-12 col-md-3 bg-white shadow-lg m-2">
-                        <div style="opacity: 0.8;" class="text-center bg-white p-2 mt-2 rounded-2 card-title">                
-                            <a href={{'/films/' + film.id }}>{{ film.title }}</a></div>
-                        <article class="bg-white mb-2 p-2 rounded-2" style="opacity: 0.8; font-size: 0.7rem">
-                            {% if (film.description.__len__() > 200) %}
+                    <section id="{{ film.id }}" style="background-image: url('{{ film.movie_banner }}'); background-repeat: no-repeat; background-size: cover;" class="card col-11 col-sm-9 col-md-5 col-lg-3 bg-white shadow-lg mx-4 my-3">
+                        <div style="opacity: 0.85;" class="d-flex justify-content-center align-items-center bg-white p-2 mt-2 rounded-2 card-title">                
+                            <h4><a href={{'/films/' + film.id }}>{{ film.title }}</a></h4>
+                        </div>
+                        <article class="bg-white mb-2 p-2 rounded-2" style="opacity: 0.85">
+                            <p class="lead p-2">{% if (film.description.__len__() > 200) %}
                                 {{ film.description[:199] }}...
                             {% else %}
                                 {{ film.description }}
-                            {% endif %}
+                            {% endif %}</p>
                         </article>
                     </section>
                 {% endfor %}
