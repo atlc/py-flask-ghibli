@@ -69,6 +69,11 @@ def single_person(person_id):
     return render_template('people/single_person.html', person=found_person)
 
 
+@app.get('/api/')
+def api_root():
+    return jsonify({"valid_paths": ["/api/films", "/api/people", "/api/species", "/api/locations", "/api/vehicles"]})
+
+
 @app.get('/api/films')
 def api_all_films():
     return jsonify(films)
