@@ -391,10 +391,7 @@
         "age": "NA",
         "eye_color": "White",
         "hair_color": "Beige",
-        "films": [
-            "https://still-atoll-64892.herokuapp.com/api/films/90b72513-afd4-4570-84de-a56c312fdf81",
-            "https://still-atoll-64892.herokuapp.com/api/films/ff24da26-a969-4f0e-ba1e-a122ead6c6e3"
-        ],
+        "films": ["https://still-atoll-64892.herokuapp.com/api/films/90b72513-afd4-4570-84de-a56c312fdf81", "https://still-atoll-64892.herokuapp.com/api/films/ff24da26-a969-4f0e-ba1e-a122ead6c6e3"],
         "species": "https://still-atoll-64892.herokuapp.com/api/species/603428ba-8a86-4b0b-a9f1-65df6abef3d3",
         "url": "https://still-atoll-64892.herokuapp.com/api/people/6b3facea-ea33-47b1-96ce-3fc737b119b8"
     },
@@ -438,10 +435,7 @@
         "age": "NA",
         "eye_color": "Green",
         "hair_color": "Yellow",
-        "films": [
-            "https://still-atoll-64892.herokuapp.com/api/films/ff24da26-a969-4f0e-ba1e-a122ead6c6e3",
-            "https://still-atoll-64892.herokuapp.com/api/films/90b72513-afd4-4570-84de-a56c312fdf81"
-        ],
+        "films": ["https://still-atoll-64892.herokuapp.com/api/films/ff24da26-a969-4f0e-ba1e-a122ead6c6e3", "https://still-atoll-64892.herokuapp.com/api/films/90b72513-afd4-4570-84de-a56c312fdf81"],
         "species": "https://still-atoll-64892.herokuapp.com/api/species/603428ba-8a86-4b0b-a9f1-65df6abef3d3",
         "url": "https://still-atoll-64892.herokuapp.com/api/people/fc196c4f-0201-4ed2-9add-c6403f7c4d32"
     },
@@ -492,7 +486,7 @@
     {
         "id": "2409052a-9029-4e8d-bfaf-70fd82c8e48d",
         "name": "Kiki",
-        "gander": "Female",
+        "gender": "Female",
         "age": "13",
         "eye_color": "Black",
         "hair_color": "Brown",

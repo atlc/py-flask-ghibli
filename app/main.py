@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from flask.json import jsonify
 import json
 
-film_file = open('data/films.json', "r")
+film_file = open('data/films.json')
 films = json.loads(film_file.read())
 film_file.close()
 
@@ -31,55 +31,55 @@ def index():
     return render_template("public/index.html")
 
 
+# @app.get('/films')
+# def all_films():
+#     return render_template("films/all.html", films=films)
+
+
+# @app.get('/films/<film_id>')
+# def single_film(film_id):
+#     found_film = {}
+#     for film in films:
+#         if (film['id'] == film_id):
+#             found_film = film
+#     if (found_film.__len__() > 0):
+#         hours = int(int(film['running_time']) / 60)
+#         minutes = int(film['running_time']) % 60
+#         film_with_time = {**found_film, "hours": hours, "minutes": minutes}
+#         return render_template("films/single.html", film=film_with_time)
+#     else:
+#         return render_template("not_found.html", resource_name="films")
+
+
+# @app.get('/people')
+# def all_people():
+#     return render_template('people/all.html', people=people)
+
+
+# @app.get('/people/<person_id>')
+# def single_person(person_id):
+#     found_person = {}
+#     for person in people:
+#         if (person['id'] == person_id):
+#             found_person = person
+#             for spc in species:
+#                 if (spc['id'] == person['species'].replace("https://still-atoll-64892.herokuapp.com/api/species/", "")):
+#                     found_person['species'] = spc['name']
+
+#     return render_template('people/single_person.html', person=found_person)
+
+
+# @app.get('/api/')
+# def api_root():
+#     return jsonify({"valid_paths": ["/api/films", "/api/people", "/api/species", "/api/locations", "/api/vehicles"]})
+
+
 @app.get('/films')
-def all_films():
-    return render_template("films/all.html", films=films)
-
-
-@app.get('/films/<film_id>')
-def single_film(film_id):
-    found_film = {}
-    for film in films:
-        if (film['id'] == film_id):
-            found_film = film
-    if (found_film.__len__() > 0):
-        hours = int(int(film['running_time']) / 60)
-        minutes = int(film['running_time']) % 60
-        film_with_time = {**found_film, "hours": hours, "minutes": minutes}
-        return render_template("films/single.html", film=film_with_time)
-    else:
-        return render_template("not_found.html", resource_name="films")
-
-
-@app.get('/people')
-def all_people():
-    return render_template('people/all.html', people=people)
-
-
-@app.get('/people/<person_id>')
-def single_person(person_id):
-    found_person = {}
-    for person in people:
-        if (person['id'] == person_id):
-            found_person = person
-            for spc in species:
-                if (spc['id'] == person['species'].replace("https://still-atoll-64892.herokuapp.com/api/species/", "")):
-                    found_person['species'] = spc['name']
-
-    return render_template('people/single_person.html', person=found_person)
-
-
-@app.get('/api/')
-def api_root():
-    return jsonify({"valid_paths": ["/api/films", "/api/people", "/api/species", "/api/locations", "/api/vehicles"]})
-
-
-@app.get('/api/films')
 def api_all_films():
     return jsonify(films)
 
 
-@app.get('/api/films/<film_id>')
+@app.get('/films/<film_id>')
 def api_single_film(film_id):
     found_film = {}
     for film in films:
@@ -88,12 +88,12 @@ def api_single_film(film_id):
     return found_film
 
 
-@app.get('/api/people')
+@app.get('/people')
 def api_all_people():
     return jsonify(people)
 
 
-@app.get('/api/people/<person_id>')
+@app.get('/people/<person_id>')
 def api_single_person(person_id):
     found_person = {}
     for person in people:
@@ -102,12 +102,12 @@ def api_single_person(person_id):
     return found_person
 
 
-@app.get('/api/locations')
+@app.get('/locations')
 def all_locations():
     return jsonify(locations)
 
 
-@app.get('/api/locations/<location_id>')
+@app.get('/locations/<location_id>')
 def single_location(location_id):
     found_location = {}
     for location in locations:
@@ -116,12 +116,12 @@ def single_location(location_id):
     return found_location
 
 
-@app.get('/api/species')
+@app.get('/species')
 def all_species():
     return jsonify(species)
 
 
-@app.get('/api/species/<species_id>')
+@app.get('/species/<species_id>')
 def single_species(species_id):
     found_species = {}
     for single in species:
@@ -130,12 +130,12 @@ def single_species(species_id):
     return found_species
 
 
-@app.get('/api/vehicles')
+@app.get('/vehicles')
 def all_vehicles():
     return jsonify(vehicles)
 
 
-@app.get('/api/vehicles/<vehicle_id>')
+@app.get('/vehicles/<vehicle_id>')
 def single_vehicle(vehicle_id):
     found_vehicle = {}
     for vehicle in vehicles:
