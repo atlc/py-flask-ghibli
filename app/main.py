@@ -63,7 +63,7 @@ def index():
 #         if (person['id'] == person_id):
 #             found_person = person
 #             for spc in species:
-#                 if (spc['id'] == person['species'].replace("https://still-atoll-64892.herokuapp.com/api/species/", "")):
+#                 if (spc['id'] == person['species'].replace("https://api-ghibli.herokuapp.com/species/", "")):
 #                     found_person['species'] = spc['name']
 
 #     return render_template('people/single_person.html', person=found_person)
