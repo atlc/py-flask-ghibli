@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask.json import jsonify
+from flask_cors import CORS
 import json
 
 film_file = open('data/films.json')
@@ -23,6 +24,7 @@ vehicles = json.loads(vehicles_file.read())
 vehicles_file.close()
 
 app = Flask(__name__)
+CORS(app)
 app.url_map.strict_slashes = False
 
 
