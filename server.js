@@ -10,6 +10,8 @@ const vehicles = require("./data/vehicles.json");
 const app = express();
 app.use(cors());
 
+app.use(express.static("public"));
+
 app.get("/films", (req, res) => {
     res.json(films);
 });
